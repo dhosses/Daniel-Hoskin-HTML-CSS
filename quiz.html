@@ -5,23 +5,24 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-    <div class="header">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="past.html">Past</a></li>
-                <li><a href="present.html">Present</a></li>
-                <li><a href="future.html">Future</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-            </ul>
-        </nav>
-    </div>
-    
-    <script src="quiz.js"></script>
-    
-    <h1>NZ Sports Quiz</h1>
-    <p>Are you ready to take the quiz? click the button below to start</p>
-    <button id="beginquiz" onclick="startQuiz()">Begin Quiz</button>
-    
+    <img src="paintedline.jpg" class="bg"/>
+    <div class="content">
+        <div class="header">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="past.html">Past</a></li>
+                    <li><a href="present.html">Present</a></li>
+                    <li><a href="future.html">Future</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    <div class="content-main">
+        <h1>NZ Sports Quiz</h1>
+        <div id="quiz-content"></div>
+    </div>        
+
+    <script type="module" src="quiz.js"></script>
 </body>
 </html>

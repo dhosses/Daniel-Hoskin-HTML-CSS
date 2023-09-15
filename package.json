@@ -1,15 +1,15 @@
 {
   "name": "daniel-hoskin-html-css",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "npx http-server"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "vite": "^4.4.9",
+    "@arrow-js/core": "^1.0.0-alpha.9"
   }
 }
