@@ -179,13 +179,12 @@
                 "question":"How is New Zealand incorporating its stunning landscapes into these sporting events, and what kind of experiences do they promise for attendees?",
                 "choices":[
                     "They have promised more stadiums closer to home and better experiences",
-                    "Attendees can expect immersive experiences that combine sports with the scenic backdrop of New Zealand's landscapes.",
-                    "Attendees can expect more events happening giving less popluar teams to have a go on the main stage",
+                    "Immersive experiences that combine sports with New Zealand's scenic landscapes",
+                    "More events happening giving less popluar teams a chance to have a go",
                     "They are giving the Attendees nothing more than they have got"
-
                 ],
-                "answer":"Attendees can expect immersive experiences that combine sports with the scenic backdrop of New Zealand's landscapes.",
-                "answerText":"New Zealand is incorporating its stunning landscapes into these sporting events by selecting venues that showcase the country's natural beauty. Attendees can expect immersive experiences that combine sports with the scenic backdrop of New Zealand's landscapes."
+                "answer": "Immersive experiences that combine sports with New Zealand's scenic landscapes",
+                "answerText": "New Zealand is incorporating its stunning landscapes into these sporting events by selecting venues that showcase the country's natural beauty. Attendees can expect immersive experiences that combine sports with the scenic backdrop of New Zealand's landscapes."
             }
         ]
     }

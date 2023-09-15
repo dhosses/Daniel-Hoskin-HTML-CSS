@@ -1,3 +1,8 @@
+body {
+  /* font-family: Helvetica, Arial, sans-serif; */
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
 img.bg {
   /* Set rules to fill background */
   min-height: 100%;
@@ -39,11 +44,11 @@ img.bg {
 }   
 
 nav {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  /* padding: 20px 0; */
 }
 
 nav ul li {
@@ -75,6 +80,7 @@ nav ul li a {
 
 .content-main h1{
   font-size: 45px;
+  font-weight: 700;
   margin-bottom: 20px;
   color: green;
 }
@@ -85,8 +91,13 @@ nav ul li a {
   background: green;
   padding: 10px 30px;
   font-size: 18px;
-  margin-top: 50px;
+  margin-top: 20px;
   border-radius: 6px;
+}
+
+.content-main input {
+  height: 40px;
+  font-size: 20px;
 }
 
 .pasttext p{
@@ -128,3 +139,7 @@ nav ul li a {
   font-size: 30px;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}

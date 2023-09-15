@@ -1,27 +1,15 @@
 import { html, reactive } from '@arrow-js/core'
-import quizes from './quizes.json' assert {type: 'json'}
+import quizes from '../quizes.json' assert {type: 'json'}
 
 const data = reactive({
+    name: '',
+    started: false,
     completed: '',
     selectedQuiz: 0,
     currentQuestion: 0,
     correctAnswer: '',
     incorrectAnswer: '',
     quizes: [
-        {
-            type: "intro",
-            description: "Do a sports quiz to test your knowledge",
-            questions: [
-                {
-                    question: "Are you ready to take the quiz? click the button below to start",
-                    choices: [
-                        "Start the quiz"
-                    ],
-                    answer: "Start the quiz",
-                    answerText: "Quiz started"
-                }
-            ]
-        },
         {
             type: "selectQuiz",
             description: "Select a quiz",
@@ -67,27 +55,22 @@ const description = () => {
 }
 
 const question = () => {
-    return html`<p>${() => questionText()}</p>`
+    return html`<p>${data.name}: ${() => questionText()}</p>`
 }
 
 const nextQuestion = (answerIndex, answer) => {
     data.incorrectAnswer = ''
 
     // This is the quiz chooser, it tells us which quiz to move to next
-    if (data.selectedQuiz === 1) {
-        data.selectedQuiz = answerIndex + 2
+    if (data.selectedQuiz === 0) {
+        data.selectedQuiz = answerIndex + 1
         data.currentQuestion = 0
-        data.correctAnswer = ''
-    } else if (data.selectedQuiz === 0) {
-       // If this is the first quiz (i.e. intro, then show the quiz chooser)
-        data.currentQuestion = 0
-        data.selectedQuiz = 1
         data.correctAnswer = ''
     } else {
-        data.correctAnswer = 'Correct! ' + currentQuestionData().answerText
+        data.correctAnswer = `Correct ${data.name}! ${currentQuestionData().answerText}`
         if ((data.currentQuestion + 1) >= selectedQuizQuestions().length) {
             // If this is the last question in the quiz, stop here
-            data.completed = 'Congratulations! You have completed the quiz!'
+            data.completed = `Congratulations ${data.name}! You have completed the quiz!`
         } else {
             data.currentQuestion += 1
         }
@@ -95,25 +78,30 @@ const nextQuestion = (answerIndex, answer) => {
 }
 
 const choiceButton = (choice, idx) => {
-    return html`<li><button @click="${() => {
+    return html`<a href="#" @click="${() => {
         const correctAnswer = currentQuestionData().answer
         // If on quiz 1 or 2 (i.e. the start/choose a quiz step, then the answer is always correct)
-        if (data.selectedQuiz === 0 || data.selectedQuiz === 1) {
+        if (data.selectedQuiz === 0) {
             nextQuestion(idx)
         } else if (choice === correctAnswer) {
             nextQuestion(idx, correctAnswer)
         } else {
             data.correctAnswer = ''
-            data.incorrectAnswer = 'Incorrect answer: ' + choice
+            data.incorrectAnswer = `This answer is incorrect: ${choice}. Please try again.`
         }
-    }}">${choice}</button></li>`
+    }}">${choice}</a>`
+}
+
+// Randomise the order of the choices array
+const shuffle = (array) => { 
+    return array.sort(() => Math.random() * Math.random() - 0.5); 
 }
 
 const choices = () => {
     return html`
-        <ul>
-            ${() => currentQuestionData().choices.map(choiceButton)}
-        </ul>
+        <div class="flex-column">
+            ${() => shuffle(currentQuestionData().choices.map(choiceButton))}
+        </div>
     `
 }
 
@@ -125,12 +113,35 @@ function reset() {
     data.incorrectAnswer = ''
 }
 
+function startQuiz() {
+    if (data.name.length) {
+        data.started = true
+    } else {
+        data.incorrectAnswer = 'Please enter your name'
+    }
+}
+
+function enterName(e) {
+    data.name = e.target.value
+    if (data.name.length) {
+        data.incorrectAnswer = ''
+    }
+}
+
 const body = () => {
-    if (data.completed.length) {
+    if (!data.started) {
+        return html`
+            <p>Do a sports quiz to test your knowledge</p>
+            <p>Are you ready to take the quiz? Enter your name then click the button below to start.</p>
+            <input type="text" @input="${(e) => enterName(e)}" placeholder="Enter your name">
+            <a href="#" @click="${() => startQuiz()}">Start quiz</a>
+            <p class="incorrect-answer">${() => data.incorrectAnswer}</p>
+        `
+    } else if (data.completed.length) {
         return html`
             <p class="correct-answer">${() => data.correctAnswer}</p>
             <p class="quiz-completed">${() => data.completed}</p>
-            <button @click="${() => reset()}">Start over</button>
+            <a href="#" @click="${() => reset()}">Start over</a>
         `
     } else {
         return html`
