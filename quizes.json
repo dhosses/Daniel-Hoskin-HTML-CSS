@@ -129,6 +129,64 @@
     {
         "title": "Future",
         "description": "A quiz about sports in the future",
-        "questions": []
+        "questions": [
+            {
+                "question":"What type of Sporting event could we see in the future",
+                "choices":[
+                    "Sailing Ragattas",
+                    "Football tournaments",
+                    "Surfing  tournaments",
+                    "Hosting the Olympics"
+                ],
+                "answer":"Sailing Ragattas",
+                "answerText":"A type of sporting event we can expect to see in New Zealand's future include sailing regattas. This event will capture the world's attention through their unique combination of sportsmanship and New Zealand's natural beauty."   
+            },
+            {
+                "question":"How will New Zealand's beautiful waters be used for upcoming sporting events?",
+                "choices":[
+                    "Rowing events",
+                    "Sailing events",
+                    "Swimming events",
+                    "Diving events"
+                ],
+                "answer":"Sailing events",
+                "answerText":"New Zealand's beautiful waters will be used for sailing races, attracting expert sailors from around the world who will compete in these prestigious events."
+
+            },
+            {
+                "question":"What kind of terrain will challenge athletes in New Zealand's upcoming off-road races?",
+                "choices":[
+                    "Rugged terrain, which includes mountains, forests, and coastal areas.",
+                    "Nice flat road, which include nice smooth grounds.",
+                    "Bumpy roads, which include real mudd roads throught the middle of the north island.",
+                    "Icey road, Which would mean that the car would slide more."
+                ],
+                "answer":"Rugged terrain, which includes mountains, forests, and coastal areas.",
+                "answerText":"Athletes in New Zealand's upcoming off-road races will be challenged by the country's rugged terrain, which includes mountains, forests, and coastal areas."
+            },
+            {
+                "question":"Will New Zealand continue to emphasize rugby?",
+                "choices":[
+                    "No, they will not contune to emphasize rugby.",
+                    "Yes, New Zealand will continue to emphasize rugby.",
+                    "Yes, But New Zealand will put less effort into rugby",
+                    "No, But New Zealand will still provide funding for rugby"
+                ],
+                "answer":"Yes, New Zealand will continue to emphasize rugby.",
+                "answerText":"Yes, New Zealand will continue to emphasize rugby, with plans to host international tournaments that draw fans from across the globe."
+            },
+            {
+                "question":"How is New Zealand incorporating its stunning landscapes into these sporting events, and what kind of experiences do they promise for attendees?",
+                "choices":[
+                    "They have promised more stadiums closer to home and better experiences",
+                    "Attendees can expect immersive experiences that combine sports with the scenic backdrop of New Zealand's landscapes.",
+                    "Attendees can expect more events happening giving less popluar teams to have a go on the main stage",
+                    "They are giving the Attendees nothing more than they have got"
+
+                ],
+                "answer":"Attendees can expect immersive experiences that combine sports with the scenic backdrop of New Zealand's landscapes.",
+                "answerText":"New Zealand is incorporating its stunning landscapes into these sporting events by selecting venues that showcase the country's natural beauty. Attendees can expect immersive experiences that combine sports with the scenic backdrop of New Zealand's landscapes."
+            }
+        ]
     }
 ]
